@@ -21,6 +21,12 @@ namespace JPJNike.API
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+            {
+                //https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets
+                builder.AddUserSecrets<Startup>();
+            }
             Configuration = builder.Build();
         }
 
@@ -31,10 +37,11 @@ namespace JPJNike.API
         {
             services.AddDbContext<Database>(opts =>
             {
-                opts.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=jpjnike;Integrated Security=True;Pooling=False");
+                //opts.UseSqlServer(Configuration.GetConnectionString("MeuBanco"));
+                opts.UseSqlServer(Configuration["CONN_DB"]);
             });
             //services.AddScoped<Database>();
-            
+
             //services.AddSingleton
             //services.AddTransient
 
