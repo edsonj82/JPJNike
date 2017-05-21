@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using JPJNike.API.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace JPJNike.API
 {
@@ -28,7 +29,12 @@ namespace JPJNike.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<Database>();
+            services.AddDbContext<Database>(opts =>
+            {
+                opts.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=jpjnike;Integrated Security=True;Pooling=False");
+            });
+            //services.AddScoped<Database>();
+            
             //services.AddSingleton
             //services.AddTransient
 

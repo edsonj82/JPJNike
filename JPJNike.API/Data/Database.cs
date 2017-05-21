@@ -44,9 +44,10 @@ namespace JPJNike.API.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=jpjnike;Integrated Security=True;Pooling=False");
-        }
+        // gonne to the code's grave 
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=jpjnike;Integrated Security=True;Pooling=False");
+        //}
     }
 }
