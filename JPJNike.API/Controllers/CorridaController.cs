@@ -64,9 +64,6 @@ namespace JPJNike.API.Controllers
             return Ok(comparador);
         }
 
-
-
-
         [HttpPost]
         public void Create([FromBody]Corrida dados)
         {
