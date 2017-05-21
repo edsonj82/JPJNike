@@ -5,9 +5,10 @@ Operações
 - Mostrar todas corridas - OK
 - Mostrar uma corrida - busca por id - OK
 - Registrar nova corrida - OK
-- Atualizar corrida
-- Excluir corrida
+- Atualizar corrida - OK
+- Excluir corrida - OK
 - Mostrar corridas do ultimo mes
+- Mostrar última corrida registrada
 
 ----------------------------
 
