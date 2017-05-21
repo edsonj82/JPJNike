@@ -7,8 +7,8 @@ Operações
 - Registrar nova corrida - OK
 - Atualizar corrida - OK
 - Excluir corrida - OK
-- Mostrar corridas do ultimo mes
-- Mostrar última corrida registrada
+- Mostrar corridas do ultimo mes - OK
+- Mostrar última corrida registrada - OK
 
 ----------------------------
 

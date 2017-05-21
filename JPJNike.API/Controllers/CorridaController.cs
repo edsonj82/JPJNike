@@ -98,6 +98,23 @@ namespace JPJNike.API.Controllers
             return Ok(corrida);
         }
 
+        [HttpGet("lastrunning")]
+        public IActionResult GetLastRunning()
+        {
+            Corrida comparador = _corridas[0];
+            for (int i = 1; i < _corridas.Count; i++)
+            {
+                if (comparador.Data < _corridas[i].Data)
+                {
+                    comparador = _corridas[i];
+                }
+            }
+            return Ok(comparador);
+        }
+
+
+
+
         [HttpPost]
         public void Create([FromBody]Corrida dados)
         {
