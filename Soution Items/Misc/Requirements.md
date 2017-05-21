@@ -1,14 +1,15 @@
-**API MASSA**
+**API MASSA - Log John Paul Jonnes - NIKE**
 
-- Log John Paul Jonnes - NIKE
 
 Operações
-- Registrar tempo corrida
-- Mostrar corridas do ultimo mes
-- Mostrar todas corridas
-- Excluir corrida
+- Mostrar todas corridas - OK
+- Mostrar uma corrida - busca por id - OK
+- Registrar nova corrida - OK
 - Atualizar corrida
+- Excluir corrida
+- Mostrar corridas do ultimo mes
 
+----------------------------
 
     Corrida
     {

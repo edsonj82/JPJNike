@@ -13,6 +13,8 @@ namespace JPJNike.API.Models
 
         public int TempoSegundos { get; set; }
 
+        public double Distancia { get; set; }
+
         public DateTime Data { get; set; }
     }
 }

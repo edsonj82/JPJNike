@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using JPJNike.API.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,36 +12,72 @@ namespace JPJNike.API.Controllers
     [Route("api/[controller]")]
     public class CorridaController : Controller
     {
-        // GET: api/values
+        private static List<Corrida> _corridas;
+
+        static CorridaController()
+        {
+            _corridas = new List<Corrida>()
+            {
+                new Corrida
+                {
+                    Id = 1,
+                    Data = DateTime.Now.AddDays(-2),
+                    TempoMinutos = 60,
+                    TempoSegundos = 3600,
+                    Distancia = 0.5
+                },
+                new Corrida
+                {
+                    Id = 2,
+                    Data = DateTime.Now.AddDays(-1),
+                    TempoMinutos = 120,
+                    TempoSegundos = 7200,
+                    Distancia = 1
+                },
+            };
+        }
+
+        // GET: api/corrida
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Corrida> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            return _corridas;
         }
 
-        // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Corrida Get(int id)
         {
-            return "value";
+            Corrida corrida = _corridas.Find(c => c.Id == id);
+            return corrida;
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Create([FromBody]Corrida dados)
         {
+            _corridas.Add(dados);            
         }
 
-        // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Update(int? id,[FromBody] Corrida dados)
         {
+            foreach (Corrida corrida in _corridas)
+            {
+                if(corrida.Id == id.Value)
+                {
+                    corrida.TempoMinutos = dados.TempoMinutos;
+                    corrida.TempoSegundos = dados.TempoSegundos;
+                    corrida.Distancia = dados.Distancia;
+                    corrida.Data = dados.Data;
+                    break;
+                }
+            }                    
         }
 
-        // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _corridas.RemoveAll(c => c.Id == id);
         }
+
     }
 }
