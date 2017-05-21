@@ -15,20 +15,11 @@ namespace JPJNike.API.Controllers
     {
         private Database _db;
 
-        public BlogController()
+        public BlogController(Database db)
         {
-            _db = new Database();
+            _db = db;
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (_db != null)
-            {
-                _db.Dispose();
-                _db = null;
-            }
-            base.Dispose(disposing);
-        }
 
         // GET: api/values
         [HttpGet]
