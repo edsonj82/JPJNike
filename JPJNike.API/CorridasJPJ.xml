@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Corridas>
+  <Corrida id="1"
+           tempoMinutos="60"
+           tempoSegundos="3600"
+           distancia="0.5"
+           data="20/05/2017" />
+  <Corrida id="2"
+           tempoMinutos="120"
+           tempoSegundos="7200"
+           distancia="1"
+           data="19/05/2017" />
+  <Corrida id="3"
+           tempoMinutos="10"
+           tempoSegundos="600"
+           distancia="1"
+           data="18/05/2017" />
+  <Corrida id="4"
+           tempoMinutos="20"
+           tempoSegundos="1200"
+           distancia="1"
+           data="17/05/2017" />
+  <Corrida id="5"
+           tempoMinutos="120"
+           tempoSegundos="7200"
+           distancia="1"
+           data="16/05/2017" />
+  <Corrida id="6"
+           tempoMinutos="40"
+           tempoSegundos="2400"
+           distancia="1"
+           data="15/05/2017" />
+</Corridas>
